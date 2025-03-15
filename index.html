@@ -1,43 +1,47 @@
 <!DOCTYPE html>
-<html>
-    <style>
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            background-color: #333;
-            display: flex;
-            justify-content: flex-end;
-            position: sticky;
-            top: 0;
-        }
-
-        li {
-            display: inline;
-        }
-
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        li a:hover {
-            background-color: #111;
-        }
-    </style>
-    <body>
-        <ul>
-            <li><a href="#accueil">Accueil</a></li>
-            <li><a href="#apropos">A propos</a></li>
-            <li><a href="#monparcours">Mon parcours</a></li>
-            <li><a href="#projets">Projets</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        
-        <h1 style="font-size: 50px;">KALIAUCHUK Alisa</h1>
-        <h1>Etudiante en informatique</h1>
-    </body>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Mon Nom</h1>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="accueil">
+        <h2>Bienvenue sur mon portfolio</h2>
+        <p>Développeur passionné par le web et la création d'expériences uniques.</p>
+    </section>
+    
+    <section id="projets">
+        <h2>Mes Projets</h2>
+        <div class="projet">
+            <h3>Projet 1</h3>
+            <p>Description du projet.</p>
+        </div>
+        <div class="projet">
+            <h3>Projet 2</h3>
+            <p>Description du projet.</p>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contactez-moi</h2>
+        <p>Envoyez-moi un email à <a href="mailto:email@example.com">email@example.com</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Mon Nom. Tous droits réservés.</p>
+    </footer>
+</body>
 </html>
