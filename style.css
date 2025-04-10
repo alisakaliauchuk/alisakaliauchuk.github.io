@@ -4,6 +4,7 @@ body {
     padding: 0;
     background-color: #f5f5f5;
     color: #333;
+    overflow-x: hidden;
 }
 
 header {
@@ -54,7 +55,7 @@ section {
 footer {
     text-align: center;
     padding: 10px;
-    background: linear-gradient(#1e3c72, #3ead5a);
+    background: linear-gradient(135deg, #1e3c72, #3ead5a);
     color: white;
     position: relative;
     bottom: 0;
