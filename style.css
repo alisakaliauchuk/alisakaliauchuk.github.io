@@ -7,6 +7,8 @@ body {
 }
 
 header {
+    display: flex;
+    position: fixed;
     background: linear-gradient(135deg, #1e3c72, #3ead5a);
     color: white;
     padding: 20px;
