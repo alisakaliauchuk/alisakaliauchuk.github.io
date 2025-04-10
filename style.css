@@ -53,7 +53,7 @@ section {
 footer {
     text-align: center;
     padding: 10px;
-    background: linear-gradient(135deg, #1e3c72, #3ead5a);
+    background: linear-gradient(#1e3c72, #3ead5a);
     color: white;
     position: relative;
     bottom: 0;
