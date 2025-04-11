@@ -45,7 +45,6 @@ nav ul li a {
     align-items: center;
     text-align: center;
     justify-content: center;
-    flex-direction: column;
 }
 
 section {
