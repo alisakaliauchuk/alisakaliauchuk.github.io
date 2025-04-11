@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
-    color: #ffffff;
+    color: #333;
     overflow-x: hidden;
     min-height: 100vh;
 }
