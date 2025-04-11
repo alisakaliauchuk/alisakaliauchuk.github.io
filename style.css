@@ -40,12 +40,12 @@ nav ul li a {
 
 .titre {
     width: 100%;
-    height: 85vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
-    background: linear-gradient(#3a475f, #687ca0);
+    background: linear-gradient(#101a2c, #112c5f);
 }
 
 section {
