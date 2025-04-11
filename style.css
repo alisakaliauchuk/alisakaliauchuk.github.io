@@ -38,6 +38,11 @@ nav ul li a {
     font-weight: bold;
 }
 
+.titre {
+    width: 100%;
+    height: 100vh;
+}
+
 section {
     scroll-margin-top: 1em;
     padding: 4vw;
