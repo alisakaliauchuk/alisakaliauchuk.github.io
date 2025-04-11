@@ -53,6 +53,12 @@ nav ul li a {
     animation: flicker 20s infinite linear;
 }
 
+@keyframes flicker {
+    to {
+      mask-position: 50% 50%, 0 50%;
+    }
+}
+
 section {
     scroll-margin-top: 100px;
     padding: 4vw;
