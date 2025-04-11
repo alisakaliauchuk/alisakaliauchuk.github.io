@@ -16,7 +16,7 @@ header {
     top: 0;
     width: 100%;
     justify-content: center;
-    background: linear-gradient(135deg, #1e3c72, #3ead5a);
+    background-color: #1e3c72;
     color: white;
     padding: 20px;
     text-align: center;
