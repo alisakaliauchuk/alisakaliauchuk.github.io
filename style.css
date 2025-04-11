@@ -9,7 +9,6 @@ body {
     background-color: #f5f5f5;
     color: #333;
     overflow-x: hidden;
-    background: hsl(0 0% 6%);
 }
 
 header {
@@ -46,18 +45,33 @@ nav ul li a {
     align-items: center;
     text-align: center;
     justify-content: center;
-    background: conic-gradient(from 180deg at 50% 70%,hsla(0,0%,98%,1) 0deg,#eec32d 72.0000010728836deg,#ec4b4b 144.0000021457672deg,#709ab9 216.00000858306885deg,#4dffbf 288.0000042915344deg,hsla(0,0%,98%,1) 1turn);
-    mask:
-        radial-gradient(circle at 50% 50%, white 2px, transparent 2.5px) 50% 50% / var(--size) var(--size),
-        url("https://assets.codepen.io/605876/noise-mask.png") 256px 50% / 256px 256px;
-    mask-composite: intersect;
-    animation: flicker 20s infinite linear;
+    --s:67px; /* shape size */
+    --m:4px;  /* line thickness */
+
+    --v1: #fff 119.5deg, #0000 120.5deg;
+    --v2: #000  119.5deg, #0000 120.5deg;
+    background:
+        conic-gradient(at var(--m)              calc(var(--s)*0.5777), transparent 270deg, #000 0deg),
+        conic-gradient(at calc(100% - var(--m)) calc(var(--s)*0.5777), #000 90deg,  transparent 0deg),
+        conic-gradient(from -60deg at 50% calc(var(--s)*0.8662)             , var(--v1)),
+        conic-gradient(from -60deg at 50% calc(var(--s)*0.8662 + 2*var(--m)), var(--v2)),
+        conic-gradient(from 120deg at 50% calc(var(--s)*1.4435 + 3*var(--m)), var(--v1)),
+        conic-gradient(from 120deg at 50% calc(var(--s)*1.4435 +   var(--m)), var(--v2)),
+        linear-gradient(90deg, #fff calc(50% - var(--m)),#000 0 calc(50% + var(--m)), #fff 0);
+    background-size: calc(var(--s) + 2*var(--m)) calc(var(--s)*1.732 + 3*var(--m)); 
+    mix-blend-mode:lighten;
 }
 
-@keyframes flicker {
-    to {
-      mask-position: 50% 50%, 0 50%;
-    }
+.titre:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:linear-gradient(90deg,red,blue,green) left/400% 100%;
+    animation:f 2s infinite alternate linear;
+}
+
+@keyframes f {
+    100% {background-position:right}
 }
 
 section {
