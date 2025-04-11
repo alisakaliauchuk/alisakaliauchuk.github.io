@@ -45,6 +45,7 @@ nav ul li a {
     align-items: center;
     text-align: center;
     justify-content: center;
+    background: linear-gradient(#3a475f, #687ca0);
 }
 
 section {
