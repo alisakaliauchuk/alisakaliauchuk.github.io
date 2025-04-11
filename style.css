@@ -38,7 +38,7 @@ nav ul li a {
     font-weight: bold;
 }
 
-section {
+.about .parcours .projets .contact {
     scroll-margin-top: 1em;
     padding: 4vw;
     text-align: center;
