@@ -7,17 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image" href="/images/logo_portfolio.png">
 </head>
-<script>
-    const btn = document.querySelector('.back-to-top');
-
-    window.addEventListener('scroll', () => {
-        btn.style.display = window.scrollY > 300 ? 'block' : 'none';
-    });
-
-    btn.addEventListener('click', () => {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    });
-</script>
 <body>
     <div class="stars">
         <div class="star" style="top: 10%; animation-delay: 0s;"></div>
@@ -104,5 +93,17 @@
     <footer>
         <p>&copy; 2025 KALIAUCHUK Alisa. Tous droits réservés.</p>
     </footer>
+    
+    <script>
+        const btn = document.querySelector('.back-to-top');
+    
+        window.addEventListener('scroll', () => {
+            btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+    
+        btn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
 </body>
 </html>
