@@ -180,7 +180,7 @@ section {
 
 .card img {
     width: 100%;
-    height: auto;
+    height: 150px;
     transition: all 0.4s ease;
     object-fit: contain;
 }
@@ -193,7 +193,7 @@ section {
 }
 
 .card:hover img {
-    width: 60%;
+    width: 100%;
 }
 
 .card:hover p {
