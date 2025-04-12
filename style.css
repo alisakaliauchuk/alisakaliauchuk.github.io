@@ -130,6 +130,7 @@ section {
 
 .text {
     font-size: 130%;
+    line-height: 20px;
 }
 
 .titre-section {
