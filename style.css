@@ -153,6 +153,8 @@ section {
     width: 20%;
     border-radius: 5px;
     background: #cfd2e2;
+    position: relative;
+    z-index: 1;
 }
 
 .card:hover {
