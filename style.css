@@ -166,13 +166,13 @@ section {
     height: 200px;
     margin-right: 10px;
     background: #8C8;
-    counter-increment: gallery-cell;
+    counter-increment: carousel;
 }
 
 .carousel:before {
     display: block;
     text-align: center;
-    content: counter(gallery-cell);
+    content: counter(carousel);
     line-height: 200px;
     font-size: 80px;
     color: white;
