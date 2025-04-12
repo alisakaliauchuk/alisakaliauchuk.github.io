@@ -203,15 +203,15 @@ h3 {
     bottom: 0;
     width: 100%;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     text-align: center;
-    opacity: 0; /* Текст скрыт по умолчанию */
+    opacity: 0;
     transition: opacity 0.3s ease;
 }
   
 .card:hover .container {
-    opacity: 1; /* Текст становится видимым при наведении */
+    opacity: 1;
 }
   
 .container h4 {
@@ -221,7 +221,6 @@ h3 {
   
 .descrip {
     font-size: 12px;
-    line-height: 1.4;
 }
 
 button {
