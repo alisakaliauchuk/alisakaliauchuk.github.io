@@ -28,7 +28,7 @@ body {
     height: 2px;
     background: linear-gradient(45deg, white, transparent);
     border-radius: 50%;
-    filter: drop-shadow(0 0 6px white);
+    filter: drop-shadow(0 0 6px rgb(152, 174, 230));
     animation: fall 10s linear infinite, tail-fade 10s ease-out infinite;
 }
   
@@ -38,7 +38,7 @@ body {
     position: absolute;
     width: 1em;
     height: 100%;
-    background: linear-gradient(45deg, transparent, white, transparent);
+    background: linear-gradient(45deg, transparent, rgb(214, 228, 255), transparent);
     border-radius: inherit;
     animation: blink 2s linear infinite;
 }
