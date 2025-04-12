@@ -152,30 +152,63 @@ section {
     font-family: cursive;
 }
 
-* {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
 .carousel-container {
-    background: #EEE;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
 }
 
 .carousel {
-    width: 66%;
-    height: 200px;
-    margin-right: 10px;
-    background: #8C8;
-    counter-increment: carousel;
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
-.carousel:before {
-    display: block;
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
     text-align: center;
-    content: counter(carousel);
-    line-height: 200px;
-    font-size: 80px;
+}
+
+.carousel-item img {
+    width: 80%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item .container {
+    padding: 15px;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.descrip {
+    font-size: 14px;
+    color: #555;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .descrip {
