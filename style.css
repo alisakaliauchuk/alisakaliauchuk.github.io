@@ -176,8 +176,8 @@ h3 {
     background-color: #f7f7f7;
     border: 1px solid #ddd;
     border-radius: 8px;
-    width: 200px; /* Уменьшаем размер карточки */
-    height: 300px; /* Уменьшаем высоту карточки */
+    width: 30%;
+    height: 300px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -189,7 +189,7 @@ h3 {
 }
   
 .card img {
-    width: 50%;
+    width: 100%;
     height: 70%;
     object-fit: cover;
     transition: opacity 0.3s ease;
