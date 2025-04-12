@@ -156,6 +156,7 @@ section {
     background: #cfd2e2;
     position: relative;
     z-index: 1;
+    padding-top: 1em;
 }
 
 .card:hover {
