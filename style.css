@@ -171,32 +171,43 @@ section {
     position: relative;
     z-index: 1;
     padding: 1em;
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.card:hover {
-    transform: scale(1);
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.card img {
+    width: 100%;
+    height: auto;
+    transition: all 0.4s ease;
+    object-fit: contain;
 }
 
 .card p {
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.4s ease, transform 0.4s ease;
+    margin-top: 10px;
+}
+
+.card:hover img {
+    width: 60%;
 }
 
 .card:hover p {
     opacity: 1;
     transform: translateY(0);
 }
-  
-img {
-    border-radius: 5px 5px 0 0;
-}
+
 .descrip {
     font-family: monospace;
     font-size: 16px;
+}
+  
+img {
+    border-radius: 5px 5px 0 0;
 }
   
 .container {
