@@ -189,14 +189,14 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         });
 
-        
+
         document.querySelectorAll('.card').forEach(card => {
             const tooltip = card.querySelector('.descrip');
             
             card.addEventListener('mousemove', (e) => {
                 // Позиционируем tooltip рядом с курсором
-                const x = e.clientX + 10; // Добавляем небольшое смещение от курсора
-                const y = e.clientY + 10;
+                const x = e.clientX + 5; // Добавляем небольшое смещение от курсора
+                const y = e.clientY + 5;
                 
                 tooltip.style.left = `${x}px`;
                 tooltip.style.top = `${y}px`;
