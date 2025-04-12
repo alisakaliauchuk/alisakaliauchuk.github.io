@@ -177,6 +177,9 @@ section {
 img {
     border-radius: 5px 5px 0 0;
 }
+.descrip {
+    font-family: monospace;
+}
   
 .container {
     padding: 2px 16px;
