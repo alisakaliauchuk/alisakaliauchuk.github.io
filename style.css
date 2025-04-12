@@ -118,6 +118,17 @@ nav ul li a {
     align-items: center;
     text-align: center;
     justify-content: center;
+    text-shadow: 0 0 5px #9fcdff, 0 0 10px #9fcdff, 0 0 20px #9fcdff, 0 0 40px #9fcdff, 0 0 80px #9fcdff;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #9fcdff, 0 0 10px #9fcdff, 0 0 20px #9fcdff, 0 0 40px #9fcdff, 0 0 80px #9fcdff;
+    }
+    100% {
+        text-shadow: 0 0 10px #5c34de, 0 0 20px #5c34de, 0 0 40px #5c34de, 0 0 80px #5c34de, 0 0 160px #5c34de;
+    }
 }
 
 section {
