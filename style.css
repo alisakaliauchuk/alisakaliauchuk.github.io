@@ -180,20 +180,19 @@ section {
 /* Стиль для tooltip */
 .descrip {
     position: absolute;
-    top: -30px; /* начальное положение относительно изображения */
-    left: 50%;
+    top: -10px; /* начальное положение относительно изображения */
+    left: 20%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
     padding: 8px 12px;
     border-radius: 5px;
     font-size: 14px;
-    display: none;  /* Скрыто по умолчанию */
+    display: none;
     white-space: nowrap;
     z-index: 1;
 }
 
-/* Когда наводим на карточку, tooltip появляется */
 .card:hover .descrip {
     display: block;
 }
