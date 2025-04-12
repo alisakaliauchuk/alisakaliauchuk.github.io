@@ -194,9 +194,8 @@
             const tooltip = card.querySelector('.descrip');
             
             card.addEventListener('mousemove', (e) => {
-                // Позиционируем tooltip рядом с курсором
-                const x = e.clientX + 5; // Добавляем небольшое смещение от курсора
-                const y = e.clientY + 5;
+                const x = e.clientX;
+                const y = e.clientY;
                 
                 tooltip.style.left = `${x}px`;
                 tooltip.style.top = `${y}px`;
