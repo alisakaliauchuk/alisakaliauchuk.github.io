@@ -190,6 +190,7 @@ section {
     font-size: 14px;
     display: none;  /* Скрыто по умолчанию */
     white-space: nowrap;
+    z-index: 1;
 }
 
 /* Когда наводим на карточку, tooltip появляется */
