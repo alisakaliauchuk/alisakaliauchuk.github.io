@@ -32,11 +32,6 @@ body {
     animation: fall 10s linear infinite, tail-fade 10s ease-out infinite;
 }
 
-body > *:not(.stars) {
-    position: relative;
-    z-index: 1;
-}
-  
 .star::before,
 .star::after {
     content: '';
