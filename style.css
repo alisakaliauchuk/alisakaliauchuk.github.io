@@ -191,7 +191,7 @@ h3 {
 }
 
 .card img {
-    width: 50%;
+    width: 60%;
     height: auto;
     transition: all 0.4s ease;
     object-fit: contain;
@@ -205,7 +205,7 @@ h3 {
 }
 
 .card:hover img {
-    width: 60%;
+    width: 70%;
 }
 
 .card:hover p {
