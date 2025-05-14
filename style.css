@@ -134,6 +134,35 @@ nav ul li a {
 }
 
 
+#parcours {
+  padding: 40px;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.timeline {
+  border-left: 3px solid #1e3c72;
+  margin-left: 20px;
+  padding-left: 20px;
+}
+
+.timeline-item {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -11px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: #1e3c72;
+  border-radius: 50%;
+}
+
+
 /* bouton pour passer aux projets */
 .projets {
   position: relative;
