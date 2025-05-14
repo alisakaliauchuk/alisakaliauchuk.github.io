@@ -146,7 +146,7 @@ nav ul li a {
   display: inline-block;
   padding: 20px 50px;
   color: #000000;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -164,7 +164,7 @@ nav ul li a {
   left: 2px;
   bottom: 2px;
   width: 50%;
-  background: rgba(255, 255, 255, 0.891);
+  background: rgba(255, 255, 255, 0.05);
   pointer-events: none;
 }
 
@@ -178,7 +178,7 @@ nav ul li a {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(to right, #0c002b, #1779ff);
+  background: linear-gradient(to right, #e6e6e6, #222222);
   animation: animate1 2s linear infinite;
 }
 
@@ -187,7 +187,7 @@ nav ul li a {
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(to bottom, #0c002b, #1779ff);
+  background: linear-gradient(to bottom, #e6e6e6, #222222);
   animation: animate2 2s linear infinite;
   animation-delay: 0.5s;
 }
@@ -197,7 +197,7 @@ nav ul li a {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(to left, #0c002b, #1779ff);
+  background: linear-gradient(to left, #e6e6e6, #222222);
   animation: animate3 2s linear infinite;
 }
 
@@ -206,7 +206,7 @@ nav ul li a {
   left: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(to top, #0c002b, #1779ff);
+  background: linear-gradient(to top, #e6e6e6, #222222);
   animation: animate4 2s linear infinite;
   animation-delay: 0.5s;
 }
