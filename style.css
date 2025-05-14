@@ -143,8 +143,6 @@ nav ul li a {
 .timeline-item {
   margin-bottom: 30px;
   position: relative;
-  background: #e9e9e9;
-  border-radius: 8px;
 }
 
 .timeline-item::before {
