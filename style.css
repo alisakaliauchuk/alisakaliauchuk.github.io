@@ -12,6 +12,7 @@ body {
     z-index: 1;
 }
 
+/* font d'écran (étoiles) */
 .stars {
     position: fixed;
     top: 0;
@@ -82,6 +83,7 @@ body {
     }
 }
 
+/* header */
 header {
     position: sticky;
     top: 0;
@@ -230,7 +232,7 @@ nav ul li a {
 }
 
 
-
+/* les sections */
 section {
     scroll-margin-top: 100px;
     padding: 1vw;
