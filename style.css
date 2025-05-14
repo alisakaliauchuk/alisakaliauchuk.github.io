@@ -254,6 +254,11 @@ section {
     font-family: cursive;
 }
 
+.titre-section-projets {
+    font-size: 2.5rem;
+    font-family: monospace;
+}
+
 .card-container-list {
     display: flex;
     flex-direction: column;
