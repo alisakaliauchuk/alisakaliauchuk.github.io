@@ -23,17 +23,44 @@
             <h2 class="titre-section-projets">Les Projets</h2>
             <div class="projet">
                 <h3>Projet Hôtel</h3>
-                <div class="carousel">
-                    <button class="carousel-button prev">&#10094;</button>
-                    <div class="carousel-track-container">
-                        <ul class="carousel-track">
-                        <li class="carousel-slide current-slide"><img src="images/projet-hotel/hotel1.png" alt="Image 1" class="zoomable"></li>
-                        <li class="carousel-slide"><img src="images/projet-hotel/hotel2.png" alt="Image 2" class="zoomable"></li>
-                        <li class="carousel-slide"><img src="images/projet-hotel/hotel3.png" alt="Image 3" class="zoomable"></li>
-                        </ul>
-                    </div>
-                    <button class="carousel-button next">&#10095;</button>
-                </div>
+                <section class="carousel" aria-label="Galerie">
+                    <ol class="carousel__viewport">
+                        <!-- Слайд 1 -->
+                        <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+                            <div class="carousel__snapper">
+                                <div class="projet-row">
+                                    <div class="projet-card">
+                                        <img src="images/projet-hotel/hotel1.png" alt="Projet 1">
+                                        <p>Description du projet 1</p>
+                                    </div>
+                                    <div class="projet-card">
+                                        <img src="images/projet-hotel/hotel2.png" alt="Projet 2">
+                                        <p>Description du projet 2</p>
+                                    </div>
+                                    <div class="projet-card">
+                                        <img src="images/projet-hotel/hotel3.png" alt="Projet 2">
+                                        <p>Description du projet 2</p>
+                                    </div>
+                                </div>
+                                <a href="#carousel__slide4" class="carousel__prev">Précédent</a>
+                                <a href="#carousel__slide2" class="carousel__next">Suivant</a>
+                            </div>
+                        </li>
+
+                        <!-- Добавь больше слайдов по аналогии -->
+                    </ol>
+
+                    <aside class="carousel__navigation">
+                        <ol class="carousel__navigation-list">
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide1" class="carousel__navigation-button">1</a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide2" class="carousel__navigation-button">2</a>
+                            </li>
+                        </ol>
+                    </aside>
+                </section>
             </div>
             <div class="projet">
                 <h3>Logiciel de Caisse</h3>
