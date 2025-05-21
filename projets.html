@@ -1,448 +1,347 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Projets BTS SIO</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image" href="/images/logo_portfolio.png">
+    <link rel="icon" type="image/png" href="/images/logo_portfolio.png" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        h2.titre-section-projets {
+            margin-bottom: 20px;
+            font-size: 2em;
+            text-align: center;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        .projets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .projet {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            padding: 15px;
+        }
+        .projet h3 {
+            margin-top: 0;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        .projet p.text {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* --- Слайдшоу --- */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            user-select: none;
+        }
+        .mySlides {
+            display: none;
+            position: relative;
+        }
+        .mySlides img {
+            width: 100%;
+            border-radius: 6px;
+            cursor: zoom-in;
+        }
+        .numbertext {
+            position: absolute;
+            top: 8px;
+            left: 12px;
+            color: #fff;
+            font-weight: bold;
+            background-color: rgba(0,0,0,0.4);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+        }
+        .text {
+            text-align: center;
+            padding: 8px 0;
+            font-size: 0.9em;
+            color: #333;
+        }
+        /* Кнопки навигации */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 32px;
+            height: 32px;
+            margin-top: -16px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            border-radius: 50%;
+            background-color: rgba(0,0,0,0.4);
+            user-select: none;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.7);
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        /* Точки навигации */
+        .dots-container {
+            text-align: center;
+            margin-top: 8px;
+        }
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 4px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .dot.active {
+            background-color: #717171;
+        }
+
+        /* Лайтбокс: fullscreen zoom */
+        #lightbox {
+            position: fixed;
+            display: none;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.2);
+        }
+        @media (max-width: 700px) {
+            .projets-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-    <body>
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="index.html#">Accueil</a></li>
-                    <li><a href="index.html#about">À propos</a></li>
-                    <li><a href="index.html#parcours">Mon parcours</a></li>
-                    <li><a href="index.html#projets">Projets</a></li>
-                    <li><a href="index.html#contact">&#128386; Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        <section>
-            <h2 class="titre-section-projets">Les Projets</h2>
-            <div class="projet">
+<body>
+
+    <header>
+        <nav>
+            <ul style="display:flex; gap:15px; list-style:none; padding:0;">
+                <li><a href="index.html#">Accueil</a></li>
+                <li><a href="index.html#about">À propos</a></li>
+                <li><a href="index.html#parcours">Mon parcours</a></li>
+                <li><a href="index.html#projets">Projets</a></li>
+                <li><a href="index.html#contact">&#128386; Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="projets">
+        <h2 class="titre-section-projets">Les Projets</h2>
+        <div class="projets-grid">
+            <!-- Projet Hôtel -->
+            <div class="projet" data-projet-id="0">
                 <h3>Projet Hôtel</h3>
-                <section class="carousel" aria-label="Galerie">
-                    <ol class="carousel__viewport">
-                        <!-- Слайд 1 -->
-                        <li id="carousel__slide1" tabindex="0" class="carousel__slide">
-                            <div class="carousel__snapper">
-                                <div class="projet-row">
-                                    <div class="projet-card">
-                                        <img src="images/projet-hotel/hotel1.png" alt="Projet 1">
-                                        <p>Description du projet 1</p>
-                                    </div>
-                                    <div class="projet-card">
-                                        <img src="images/projet-hotel/hotel2.png" alt="Projet 2">
-                                        <p>Description du projet 2</p>
-                                    </div>
-                                    <div class="projet-card">
-                                        <img src="images/projet-hotel/hotel3.png" alt="Projet 2">
-                                        <p>Description du projet 2</p>
-                                    </div>
-                                </div>
-                                <a href="#carousel__slide4" class="carousel__prev">Précédent</a>
-                                <a href="#carousel__slide2" class="carousel__next">Suivant</a>
-                            </div>
-                        </li>
-
-                        <!-- Добавь больше слайдов по аналогии -->
-                    </ol>
-
-                    <aside class="carousel__navigation">
-                        <ol class="carousel__navigation-list">
-                            <li class="carousel__navigation-item">
-                                <a href="#carousel__slide1" class="carousel__navigation-button">1</a>
-                            </li>
-                            <li class="carousel__navigation-item">
-                                <a href="#carousel__slide2" class="carousel__navigation-button">2</a>
-                            </li>
-                        </ol>
-                    </aside>
-                </section>
+                <div class="slideshow-container">
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="img_nature_wide.jpg" alt="Nature" />
+                        <div class="text">Caption Text</div>
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="img_snow_wide.jpg" alt="Snow" />
+                        <div class="text">Caption Two</div>
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="img_mountains_wide.jpg" alt="Mountains" />
+                        <div class="text">Caption Three</div>
+                    </div>
+                    <a class="prev">&#10094;</a>
+                    <a class="next">&#10095;</a>
+                </div>
+                <div class="dots-container">
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                </div>
             </div>
-            <div class="projet">
+
+            <!-- Logiciel de Caisse -->
+            <div class="projet" data-projet-id="1">
                 <h3>Logiciel de Caisse</h3>
                 <p class="text">Description du projet.</p>
                 <div class="slideshow-container">
-
-                    <div class="mySlides fade">
+                    <div class="mySlides">
                         <div class="numbertext">1 / 3</div>
-                        <img src="img_nature_wide.jpg" style="width:100%">
+                        <img src="img_nature_wide.jpg" alt="Nature" />
                         <div class="text">Caption Text</div>
                     </div>
-
-                    <div class="mySlides fade">
+                    <div class="mySlides">
                         <div class="numbertext">2 / 3</div>
-                        <img src="img_snow_wide.jpg" style="width:100%">
+                        <img src="img_snow_wide.jpg" alt="Snow" />
                         <div class="text">Caption Two</div>
                     </div>
-
-                    <div class="mySlides fade">
+                    <div class="mySlides">
                         <div class="numbertext">3 / 3</div>
-                        <img src="img_mountains_wide.jpg" style="width:100%">
+                        <img src="img_mountains_wide.jpg" alt="Mountains" />
                         <div class="text">Caption Three</div>
                     </div>
-
-                    <a class="prev" onclick="plusSlides(-1)">❮</a>
-                    <a class="next" onclick="plusSlides(1)">❯</a>
+                    <a class="prev">&#10094;</a>
+                    <a class="next">&#10095;</a>
                 </div>
-                <br>
-
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span> 
-                    <span class="dot" onclick="currentSlide(2)"></span> 
-                    <span class="dot" onclick="currentSlide(3)"></span> 
+                <div class="dots-container">
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
                 </div>
-                
             </div>
-            <div class="projet">
+
+            <!-- Pendule d'échecs -->
+            <div class="projet" data-projet-id="2">
                 <h3>Pendule d'échecs</h3>
                 <p class="text">Description du projet.</p>
                 <div class="slideshow-container">
-
-                    <div class="mySlides fade">
+                    <div class="mySlides">
                         <div class="numbertext">1 / 3</div>
-                        <img src="img_nature_wide.jpg" style="width:100%">
+                        <img src="img_nature_wide.jpg" alt="Nature" />
                         <div class="text">Caption Text</div>
                     </div>
-
-                    <div class="mySlides fade">
+                    <div class="mySlides">
                         <div class="numbertext">2 / 3</div>
-                        <img src="img_snow_wide.jpg" style="width:100%">
+                        <img src="img_snow_wide.jpg" alt="Snow" />
                         <div class="text">Caption Two</div>
                     </div>
-
-                    <div class="mySlides fade">
+                    <div class="mySlides">
                         <div class="numbertext">3 / 3</div>
-                        <img src="img_mountains_wide.jpg" style="width:100%">
+                        <img src="img_mountains_wide.jpg" alt="Mountains" />
                         <div class="text">Caption Three</div>
                     </div>
-
-                    <a class="prev" onclick="plusSlides(-1)">❮</a>
-                    <a class="next" onclick="plusSlides(1)">❯</a>
+                    <a class="prev">&#10094;</a>
+                    <a class="next">&#10095;</a>
                 </div>
-                <br>
-
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span> 
-                    <span class="dot" onclick="currentSlide(2)"></span> 
-                    <span class="dot" onclick="currentSlide(3)"></span> 
+                <div class="dots-container">
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
                 </div>
-                
             </div>
-            <div class="projet">
+
+            <!-- Calcul de crédit -->
+            <div class="projet" data-projet-id="3">
                 <h3>Calcul de crédit</h3>
                 <p class="text">Description du projet.</p>
                 <div class="slideshow-container">
-
-                    <div class="mySlides fade">
+                    <div class="mySlides">
                         <div class="numbertext">1 / 3</div>
-                        <img src="img_nature_wide.jpg" style="width:100%">
+                        <img src="img_nature_wide.jpg" alt="Nature" />
                         <div class="text">Caption Text</div>
                     </div>
-
-                    <div class="mySlides fade">
+                    <div class="mySlides">
                         <div class="numbertext">2 / 3</div>
-                        <img src="img_snow_wide.jpg" style="width:100%">
+                        <img src="img_snow_wide.jpg" alt="Snow" />
                         <div class="text">Caption Two</div>
                     </div>
-
-                    <div class="mySlides fade">
+                    <div class="mySlides">
                         <div class="numbertext">3 / 3</div>
-                        <img src="img_mountains_wide.jpg" style="width:100%">
+                        <img src="img_mountains_wide.jpg" alt="Mountains" />
                         <div class="text">Caption Three</div>
                     </div>
-
-                    <a class="prev" onclick="plusSlides(-1)">❮</a>
-                    <a class="next" onclick="plusSlides(1)">❯</a>
+                    <a class="prev">&#10094;</a>
+                    <a class="next">&#10095;</a>
                 </div>
-                <br>
-
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span> 
-                    <span class="dot" onclick="currentSlide(2)"></span> 
-                    <span class="dot" onclick="currentSlide(3)"></span> 
+                <div class="dots-container">
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
                 </div>
-                
             </div>
-            <div class="projet">
-                <h3>QCM</h3>
-                <p class="text">Description du projet.</p>
-                <div class="slideshow-container">
 
-                    <div class="mySlides fade">
-                        <div class="numbertext">1 / 3</div>
-                        <img src="img_nature_wide.jpg" style="width:100%">
-                        <div class="text">Caption Text</div>
-                    </div>
+            <!-- Остальные проекты тоже... -->
+        </div>
+    </section>
 
-                    <div class="mySlides fade">
-                        <div class="numbertext">2 / 3</div>
-                        <img src="img_snow_wide.jpg" style="width:100%">
-                        <div class="text">Caption Two</div>
-                    </div>
+    <!-- Лайтбокс для увеличения картинок -->
+    <div id="lightbox">
+        <img src="" alt="Enlarged image" />
+    </div>
 
-                    <div class="mySlides fade">
-                        <div class="numbertext">3 / 3</div>
-                        <img src="img_mountains_wide.jpg" style="width:100%">
-                        <div class="text">Caption Three</div>
-                    </div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const projets = document.querySelectorAll(".projet");
 
-                    <a class="prev" onclick="plusSlides(-1)">❮</a>
-                    <a class="next" onclick="plusSlides(1)">❯</a>
-                </div>
-                <br>
+        projets.forEach(projet => {
+            let slideIndex = 0;
+            const slides = projet.querySelectorAll(".mySlides");
+            const dots = projet.querySelectorAll(".dot");
+            const prev = projet.querySelector(".prev");
+            const next = projet.querySelector(".next");
 
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span> 
-                    <span class="dot" onclick="currentSlide(2)"></span> 
-                    <span class="dot" onclick="currentSlide(3)"></span> 
-                </div>
-                
-            </div>
-            <div class="projet">
-                <h3>Projet Caméra</h3>
-                <p class="text">Description du projet.</p>
-                <div class="slideshow-container">
+            function showSlide(n) {
+                if (n >= slides.length) slideIndex = 0;
+                if (n < 0) slideIndex = slides.length - 1;
+                else slideIndex = n;
 
-                    <div class="mySlides fade">
-                        <div class="numbertext">1 / 3</div>
-                        <img src="img_nature_wide.jpg" style="width:100%">
-                        <div class="text">Caption Text</div>
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">2 / 3</div>
-                        <img src="img_snow_wide.jpg" style="width:100%">
-                        <div class="text">Caption Two</div>
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">3 / 3</div>
-                        <img src="img_mountains_wide.jpg" style="width:100%">
-                        <div class="text">Caption Three</div>
-                    </div>
-
-                    <a class="prev" onclick="plusSlides(-1)">❮</a>
-                    <a class="next" onclick="plusSlides(1)">❯</a>
-                </div>
-                <br>
-
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span> 
-                    <span class="dot" onclick="currentSlide(2)"></span> 
-                    <span class="dot" onclick="currentSlide(3)"></span> 
-                </div>
-                
-            </div>
-            <div class="projet">
-                <h3>Planning Cabinet médical</h3>
-                <p class="text">Description du projet.</p>
-                <div class="slideshow-container">
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">1 / 3</div>
-                        <img src="img_nature_wide.jpg" style="width:100%">
-                        <div class="text">Caption Text</div>
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">2 / 3</div>
-                        <img src="img_snow_wide.jpg" style="width:100%">
-                        <div class="text">Caption Two</div>
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">3 / 3</div>
-                        <img src="img_mountains_wide.jpg" style="width:100%">
-                        <div class="text">Caption Three</div>
-                    </div>
-
-                    <a class="prev" onclick="plusSlides(-1)">❮</a>
-                    <a class="next" onclick="plusSlides(1)">❯</a>
-                </div>
-                <br>
-
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span> 
-                    <span class="dot" onclick="currentSlide(2)"></span> 
-                    <span class="dot" onclick="currentSlide(3)"></span> 
-                </div>
-                
-            </div>
-            <div class="projet">
-                <h3>Projet Facture</h3>
-                <p class="text">Description du projet.</p>
-                <div class="slideshow-container">
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">1 / 3</div>
-                        <img src="img_nature_wide.jpg" style="width:100%">
-                        <div class="text">Caption Text</div>
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">2 / 3</div>
-                        <img src="img_snow_wide.jpg" style="width:100%">
-                        <div class="text">Caption Two</div>
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">3 / 3</div>
-                        <img src="img_mountains_wide.jpg" style="width:100%">
-                        <div class="text">Caption Three</div>
-                    </div>
-
-                    <a class="prev" onclick="plusSlides(-1)">❮</a>
-                    <a class="next" onclick="plusSlides(1)">❯</a>
-                </div>
-                <br>
-
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span> 
-                    <span class="dot" onclick="currentSlide(2)"></span> 
-                    <span class="dot" onclick="currentSlide(3)"></span> 
-                </div>
-                
-            </div>
-            <div class="projet">
-                <h3>Projet Graphique</h3>
-                <p class="text">Description du projet.</p>
-                <div class="slideshow-container">
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">1 / 3</div>
-                        <img src="img_nature_wide.jpg" style="width:100%">
-                        <div class="text">Caption Text</div>
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">2 / 3</div>
-                        <img src="img_snow_wide.jpg" style="width:100%">
-                        <div class="text">Caption Two</div>
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">3 / 3</div>
-                        <img src="img_mountains_wide.jpg" style="width:100%">
-                        <div class="text">Caption Three</div>
-                    </div>
-
-                    <a class="prev" onclick="plusSlides(-1)">❮</a>
-                    <a class="next" onclick="plusSlides(1)">❯</a>
-                </div>
-                <br>
-
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span> 
-                    <span class="dot" onclick="currentSlide(2)"></span> 
-                    <span class="dot" onclick="currentSlide(3)"></span> 
-                </div>
-                
-            </div>
-        </section>
-        <section>
-            <h2 class="titre-section-projets">Le Projet du 1ère année de stage</h2>
-            <div class="projet">
-                <h3>Site web Hôtel</h3>
-                <p class="text">Description du projet.</p>
-                <div class="slideshow-container">
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">1 / 3</div>
-                        <img src="img_nature_wide.jpg" style="width:100%">
-                        <div class="text">Caption Text</div>
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">2 / 3</div>
-                        <img src="img_snow_wide.jpg" style="width:100%">
-                        <div class="text">Caption Two</div>
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">3 / 3</div>
-                        <img src="img_mountains_wide.jpg" style="width:100%">
-                        <div class="text">Caption Three</div>
-                    </div>
-
-                    <a class="prev" onclick="plusSlides(-1)">❮</a>
-                    <a class="next" onclick="plusSlides(1)">❯</a>
-                </div>
-                <br>
-
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span> 
-                    <span class="dot" onclick="currentSlide(2)"></span> 
-                    <span class="dot" onclick="currentSlide(3)"></span> 
-                </div>
-                
-            </div>
-        </section>
-        <section>
-            <h2 class="titre-section-projets">Le Projet du 2ème année de stage</h2>
-            <div class="projet">
-                <h3>Site web AEFTI Marne</h3>
-                <p class="text">Description du projet.</p>
-                <div class="slideshow-container">
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">1 / 3</div>
-                        <img src="img_nature_wide.jpg" style="width:100%">
-                        <div class="text">Caption Text</div>
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">2 / 3</div>
-                        <img src="img_snow_wide.jpg" style="width:100%">
-                        <div class="text">Caption Two</div>
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">3 / 3</div>
-                        <img src="img_mountains_wide.jpg" style="width:100%">
-                        <div class="text">Caption Three</div>
-                    </div>
-
-                    <a class="prev" onclick="plusSlides(-1)">❮</a>
-                    <a class="next" onclick="plusSlides(1)">❯</a>
-                </div>
-                <br>
-
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span> 
-                    <span class="dot" onclick="currentSlide(2)"></span> 
-                    <span class="dot" onclick="currentSlide(3)"></span> 
-                </div>
-                
-            </div>
-        </section>
-        <script>
-            const track = document.querySelector('.carousel-track');
-            const slides = Array.from(track.children);
-            const nextButton = document.querySelector('.carousel-button.next');
-            const prevButton = document.querySelector('.carousel-button.prev');
-            let currentIndex = 0;
-
-            function updateSlidePosition() {
-                const slideWidth = slides[0].getBoundingClientRect().width;
-                track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+                slides.forEach((slide, i) => {
+                    slide.style.display = (i === slideIndex) ? "block" : "none";
+                    dots[i].classList.toggle("active", i === slideIndex);
+                });
             }
 
-            nextButton.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % slides.length;
-                updateSlidePosition();
+            showSlide(slideIndex);
+
+            prev.addEventListener("click", () => showSlide(slideIndex - 1));
+            next.addEventListener("click", () => showSlide(slideIndex + 1));
+            dots.forEach((dot, i) => {
+                dot.addEventListener("click", () => showSlide(i));
             });
 
-            prevButton.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                updateSlidePosition();
+            // Лайтбокс
+            slides.forEach(slide => {
+                const img = slide.querySelector("img");
+                img.addEventListener("click", () => {
+                    const lightbox = document.getElementById("lightbox");
+                    const lightboxImg = lightbox.querySelector("img");
+                    lightboxImg.src = img.src;
+                    lightbox.style.display = "flex";
+                });
             });
+        });
 
-            window.addEventListener('resize', updateSlidePosition);
-            updateSlidePosition();
-        </script>
-    </body>
+        // Закрыть лайтбокс по клику
+        const lightbox = document.getElementById("lightbox");
+        lightbox.addEventListener("click", () => {
+            lightbox.style.display = "none";
+            lightbox.querySelector("img").src = "";
+        });
+    });
+</script>
+
+</body>
 </html>
