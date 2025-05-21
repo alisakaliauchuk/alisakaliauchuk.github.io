@@ -257,7 +257,7 @@ nav ul li a {
 /* carousel images */
 .carousel {
   position: relative;
-  max-width: 600px;
+  max-width: 100%;
   margin: 40px auto;
   overflow: hidden;
   border-radius: 10px;
