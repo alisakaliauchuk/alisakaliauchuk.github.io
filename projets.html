@@ -157,13 +157,13 @@
                         <img src="/images/projet-hotel/hotel3.png" alt="Mountains" />
                         <div class="text">Caption Three</div>
                     </div>
-                    <a class="prev" onclick="plusSlides(-1)">❮</a>
-                    <a class="next" onclick="plusSlides(1)">❯</a>
+                    <a class="prev">❮</a>
+                    <a class="next">❯</a>
                 </div>
                 <div class="dots-container">
-                    <span class="dot" onclick="currentSlide(1)"></span> 
-                    <span class="dot" onclick="currentSlide(2)"></span> 
-                    <span class="dot" onclick="currentSlide(3)"></span>  
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span>  
                 </div>
             </div>
 
@@ -272,54 +272,33 @@
     </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const projets = document.querySelectorAll(".projet");
+    document.querySelectorAll('.projet').forEach(projet => {
+        let slideIndex = 0;
+        const slides = projet.querySelectorAll('.mySlides');
+        const dots = projet.querySelectorAll('.dot');
+        const prev = projet.querySelector('.prev');
+        const next = projet.querySelector('.next');
 
-        projets.forEach(projet => {
-            let slideIndex = 0;
-            const slides = projet.querySelectorAll(".mySlides");
-            const dots = projet.querySelectorAll(".dot");
-            const prev = projet.querySelector(".prev");
-            const next = projet.querySelector(".next");
+        function showSlide(n) {
+            if (n >= slides.length) slideIndex = 0;
+            else if (n < 0) slideIndex = slides.length - 1;
+            else slideIndex = n;
 
-            function showSlide(n) {
-                if (n >= slides.length) slideIndex = 0;
-                if (n < 0) slideIndex = slides.length - 1;
-                else slideIndex = n;
-
-                slides.forEach((slide, i) => {
-                    slide.style.display = (i === slideIndex) ? "block" : "none";
-                    dots[i].classList.toggle("active", i === slideIndex);
-                });
-            }
-
-            showSlide(slideIndex);
-
-            prev.addEventListener("click", () => showSlide(slideIndex - 1));
-            next.addEventListener("click", () => showSlide(slideIndex + 1));
-            dots.forEach((dot, i) => {
-                dot.addEventListener("click", () => showSlide(i));
+            slides.forEach((slide, i) => {
+            slide.style.display = i === slideIndex ? 'block' : 'none';
+            if (dots[i]) dots[i].classList.toggle('active', i === slideIndex);
             });
+        }
 
-            // Лайтбокс
-            slides.forEach(slide => {
-                const img = slide.querySelector("img");
-                img.addEventListener("click", () => {
-                    const lightbox = document.getElementById("lightbox");
-                    const lightboxImg = lightbox.querySelector("img");
-                    lightboxImg.src = img.src;
-                    lightbox.style.display = "flex";
-                });
-            });
-        });
+        showSlide(slideIndex);
 
-        // Закрыть лайтбокс по клику
-        const lightbox = document.getElementById("lightbox");
-        lightbox.addEventListener("click", () => {
-            lightbox.style.display = "none";
-            lightbox.querySelector("img").src = "";
+        prev.addEventListener('click', () => showSlide(slideIndex - 1));
+        next.addEventListener('click', () => showSlide(slideIndex + 1));
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => showSlide(i));
         });
-    });
+        });
 </script>
 
 </body>
