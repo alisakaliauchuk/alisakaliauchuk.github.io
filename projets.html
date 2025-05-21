@@ -32,7 +32,11 @@
         }
         .mySlides {
             display: none;
-            position: relative;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+        .mySlides.active {
+            opacity: 1;
         }
         .mySlides img {
             width: 100%;
@@ -97,15 +101,19 @@
         }
 
         #lightbox {
-            position: fixed;
             display: none;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.8);
             justify-content: center;
             align-items: center;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.8);
             z-index: 9999;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.3s ease, transform 0.3s ease;
             cursor: zoom-out;
         }
+
         #lightbox img {
             max-width: 90%;
             max-height: 90%;
@@ -271,35 +279,71 @@
         <img src="" alt="Enlarged image" />
     </div>
 
-<script>
-    document.querySelectorAll('.projet').forEach(projet => {
-        let slideIndex = 0;
-        const slides = projet.querySelectorAll('.mySlides');
-        const dots = projet.querySelectorAll('.dot');
-        const prev = projet.querySelector('.prev');
-        const next = projet.querySelector('.next');
+    <script>
+        document.querySelectorAll('.projet').forEach(projet => {
+            let slideIndex = 0;
+            const slides = projet.querySelectorAll('.mySlides');
+            const dots = projet.querySelectorAll('.dot');
+            const prev = projet.querySelector('.prev');
+            const next = projet.querySelector('.next');
 
-        function showSlide(n) {
-            if (n >= slides.length) slideIndex = 0;
-            else if (n < 0) slideIndex = slides.length - 1;
-            else slideIndex = n;
+            function showSlide(n) {
+                if (n >= slides.length) slideIndex = 0;
+                else if (n < 0) slideIndex = slides.length - 1;
+                else slideIndex = n;
 
-            slides.forEach((slide, i) => {
-            slide.style.display = i === slideIndex ? 'block' : 'none';
-            if (dots[i]) dots[i].classList.toggle('active', i === slideIndex);
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    slide.style.display = 'none';
+                });
+
+                if (slides[slideIndex]) {
+                    slides[slideIndex].style.display = 'block';
+                    setTimeout(() => {
+                        slides[slideIndex].classList.add('active');
+                    }, 10);
+                }
+
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === slideIndex);
+                });
+            }
+
+            showSlide(slideIndex);
+
+            prev.addEventListener('click', () => showSlide(slideIndex - 1));
+            next.addEventListener('click', () => showSlide(slideIndex + 1));
+
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => showSlide(i));
             });
-        }
-
-        showSlide(slideIndex);
-
-        prev.addEventListener('click', () => showSlide(slideIndex - 1));
-        next.addEventListener('click', () => showSlide(slideIndex + 1));
-
-        dots.forEach((dot, i) => {
-            dot.addEventListener('click', () => showSlide(i));
         });
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = lightbox.querySelector('img');
+
+        document.querySelectorAll('.mySlides img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImage.src = img.src;
+                lightbox.style.display = 'flex';
+                setTimeout(() => {
+                    lightbox.style.opacity = '1';
+                    lightbox.style.transform = 'scale(1)';
+                }, 10);
+            });
         });
-</script>
+
+        lightbox.addEventListener('click', () => {
+            lightbox.style.opacity = '0';
+            lightbox.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+                lightboxImage.src = '';
+            }, 300);
+        });
+    </script>
+
 
 </body>
 </html>
