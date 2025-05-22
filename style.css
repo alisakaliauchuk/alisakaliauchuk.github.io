@@ -270,6 +270,7 @@ section {
 .text {
     font-size: 130%;
     line-height: 30px;
+    font-family: monospace;
 }
 
 .titre-section {
