@@ -6,7 +6,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+    background-image: url("/images/background.jpg");
     overflow-x: hidden;
     min-height: 100vh;
     z-index: 1;
