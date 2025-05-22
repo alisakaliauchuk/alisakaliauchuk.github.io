@@ -185,6 +185,9 @@
             <div class="projet" data-projet-id="0">
                 <h3>Projet Hôtel</h3>
                 <p class="text">Projet Hôtel - est une page web avec canevas sur quel on peut réserver une chambre.</p>
+
+                <button class="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px; background-color: #1e3c72; color: white; border: none; padding: 10px 20px; border-radius: 50%; cursor: pointer; font-size: 30px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); z-index: 1000;">↑</button>
+
                 <div class="slideshow-container">
                     <div class="mySlides">
                         <div class="numbertext">1 / 7</div>
@@ -1032,6 +1035,16 @@
                 lightbox.style.display = 'none';
                 lightboxImage.src = '';
             }, 300);
+        });
+
+        // bouton flèche
+        const btn = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+    
+        btn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
         });
     </script>
 
